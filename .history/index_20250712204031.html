@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Amor</title>
+    <!-- Tailwind CSS CDN para estilos de utilidad -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    
+</head>
+<body>
+    <!-- Elemento de cubierta que oculta la carta principal inicialmente -->
+    <div id="cover" class="cover">
+        <h2 class="text-4xl md:text-5xl font-bold text-violet-700 mb-8">¡Un mensaje especial para ti!</h2>
+        <button id="openLetterButton" class="cover-button">
+            Haz clic para abrir la carta
+        </button>
+    </div>
+
+    <!-- Tarjeta principal de la carta, inicialmente oculta -->
+    <div class="card" id="mainCard">
+        <div class="heart-icon">❤️</div>
+        <h1 class="text-3xl md:text-4xl font-bold text-violet-600 mb-4">¡Feliz Mesversario, Mi Amor!</h1>
+  
+        <p class="text-gray-700 text-lg leading-relaxed">En este momento de mi vida, donde no sé qué me depara el destino, Dios o la vida misma, me encuentro navegando entre la incertidumbre y el vacío. Son días en los que ni siquiera tengo claro qué quiero o por qué pasan las cosas. Hay noches de insomnio, de tristeza profunda, de un dolor que cala hondo...
+        Y aun así, hay algo —una sola cosa— que me impulsa a levantarme cada día, aunque sea en modo automático: la ilusión de volver a estar cerca de ti. De mirar otra vez tus hermosos ojos cafés y verlos brillar. De tener tu piel junto a la mía, de escuchar tu respirar, de sentir tus manos grandes acariciarme.
+        Pero más allá de lo físico, lo que más anhelo es esa paz que me das, esa sensación de seguridad que solo encuentro en ti.
+        Gracias por estar para mí en todo momento. Por tus consejos, por hacerme reír hasta que me duela el estómago, por los momentos de pasión que aún llevo en mi piel. Gracias por acompañarme en mis días buenos y, sobre todo, por no soltarme en los días malos. Tu presencia ha sido luz y refugio.
+        Sé que en este momento ambos estamos luchando por encontrar un poco de calma, de estabilidad, de sentido. Tú trabajas duro por construir ese bienestar, y eso me llena de orgullo. Siempre te he admirado, y lo sigo haciendo profundamente.
+        La vida nos cruza con personas que llegan a enseñarnos algo, y sé que todo tiene un propósito. Pero desde lo más profundo de mi alma, deseo que tú no seas solo alguien de paso en mi historia… Quiero que seas mi compañía hasta que seamos muy, muy viejitos.
+        Sé que tú puedes vivir sin mí, y yo sin ti, porque lo nuestro no es una dependencia, sino una decisión. Una elección diaria de seguir caminando juntos, como compañeros, como amigos, como pareja.
+        Le agradezco a todo lo que conspiró para que llegaras a mi vida. Te amo, te extraño, y anhelo con todas mis fuerzas volver a estar a tu lado.</p>
+       
+        <p class="text-gray-800 text-xl font-semibold mt-6">Con todo mi amor,</p>
+        <p class="text-violet-700 text-2xl font-bold">Yesenia</p>
+        <button id="revealButton" class="button-reveal">
+            ¡Haz clic para un mensaje secreto!
+        </button>
+
+        <div id="secretMessage" class="secret-message">
+            <p>Ah, y no se me puede olvidar decirlo: ¡estás hecho todo un papasito! Bien bueno, delicioso... y te mando mil besos en esas nalgas ricas; y en otros lugares más. 😏❤️❤️</p>
+        </div>
+        <!-- Controles de Música -->
+        <div class="mt-8 pt-4 border-t border-violet-200">
+            <audio id="backgroundMusic" loop>
+                <source src="assets/mp3/Sabes letra - REIK.mp3" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+            <button id="musicToggleButton" class="button-reveal text-sm px-4 py-2">
+                ▶️ Reproducir Música
+            </button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

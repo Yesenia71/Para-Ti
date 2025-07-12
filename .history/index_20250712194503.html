@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Amor</title>
+    <!-- Tailwind CSS CDN para estilos de utilidad -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    
+</head>
+<body>
+    <!-- Elemento de cubierta que oculta la carta principal inicialmente -->
+    <div id="cover" class="cover">
+        <h2 class="text-4xl md:text-5xl font-bold text-violet-700 mb-8">¡Un mensaje especial para ti!</h2>
+        <button id="openLetterButton" class="cover-button">
+            Haz clic para abrir la carta
+        </button>
+    </div>
+
+    <!-- Tarjeta principal de la carta, inicialmente oculta -->
+    <div class="card" id="mainCard">
+        <!-- Icono de corazón (se puede reemplazar por un SVG o Font Awesome si se prefiere) -->
+        <div class="heart-icon">❤️</div>
+        <h1 class="text-3xl md:text-4xl font-bold text-violet-600 mb-4">¡Feliz Mesversario, Mi Amor!</h1>
+        <p class="text-gray-700 text-lg mb-4 leading-relaxed">
+            Mi vida, hoy celebramos otro mes de este hermoso camino que estamos construyendo juntos. Cada día a tu lado es un regalo, una aventura y una confirmación de que eres la persona más maravillosa que he conocido.
+        </p>
+        <p class="text-gray-700 text-lg mb-4 leading-relaxed">
+            Gracias por cada risa, cada abrazo, cada momento de apoyo y por hacer que mi mundo sea mucho más brillante. Eres mi compañero, mi mejor amigo y el amor de mi vida.
+        </p>
+        <p class="text-gray-700 text-lg leading-relaxed">
+            Espero que sigamos sumando muchos más meses y años llenos de amor, felicidad y complicidad. Te amo con todo mi corazón.
+        </p>
+        <p class="text-gray-800 text-xl font-semibold mt-6">Con todo mi amor,</p>
+        <p class="text-violet-700 text-2xl font-bold">Tu Nombre Aquí</p>
+
+        <button id="revealButton" class="button-reveal">
+            ¡Haz clic para un mensaje secreto!
+        </button>
+
+        <div id="secretMessage" class="secret-message">
+            <p>¡Sorpresa! Solo quería recordarte una vez más lo increíble que eres y lo afortunada que me siento de tenerte. Eres mi todo. ❤️</p>
+        </div>
+    </div>
+
+    <script>
+        /*
+         * Lógica JavaScript para la interacción de la carta
+         */
+
+        // Obtiene referencias a los elementos HTML por su ID
+        const openLetterButton = document.getElementById('openLetterButton');
+        const cover = document.getElementById('cover');
+        const mainCard = document.getElementById('mainCard');
+        const revealButton = document.getElementById('revealButton');
+        const secretMessage = document.getElementById('secretMessage');
+
+        // Agrega un "event listener" al botón de la cubierta
+        // Cuando se hace clic en este botón, la cubierta se oculta y la carta principal se muestra.
+        openLetterButton.addEventListener('click', function() {
+            cover.classList.add('hide'); // Añade la clase 'hide' para ocultar la cubierta
+            mainCard.classList.add('show'); // Añade la clase 'show' para mostrar la carta principal
+        });
+
+        // Agrega un "event listener" al botón para revelar el mensaje secreto
+        // Alterna la visibilidad del mensaje secreto al hacer clic.
+        revealButton.addEventListener('click', function() {
+            if (secretMessage.classList.contains('show')) {
+                // Si el mensaje secreto ya está visible, lo oculta
+                secretMessage.classList.remove('show');
+                this.textContent = '¡Haz clic para un mensaje secreto!'; // Cambia el texto del botón
+            } else {
+                // Si el mensaje secreto está oculto, lo muestra
+                secretMessage.classList.add('show');
+                this.textContent = 'Ocultar mensaje secreto'; // Cambia el texto del botón
+            }
+        });
+
+        // Función para ajustar el tamaño del lienzo (no se usa directamente en esta carta,
+        // pero es una buena práctica para aplicaciones con elementos <canvas>)
+        function setCanvasSize() {
+            // En este caso, la responsividad se maneja principalmente con CSS.
+            // Si hubiera un elemento <canvas>, aquí se ajustarían sus dimensiones.
+        }
+
+        // Llama a setCanvasSize cuando la ventana se carga y cuando se redimensiona
+        window.onload = setCanvasSize;
+        window.onresize = setCanvasSize;
+    </script>
+</body>
+</html>
